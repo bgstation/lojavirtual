@@ -1,0 +1,64 @@
+/* 
+    Document   : arquivo
+    Created on : 12/03/2014, 15:00:44
+    Author     : pedro
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#navegacao_passos {
+    position: static; left: 0; width: 100%; margin-bottom: 1em;
+}
+
+#progress { 
+    position:relative; 
+    width:400px; 
+    border: 1px solid #ddd; 
+    padding: 1px; 
+    border-radius: 3px; 
+}
+
+#bar { 
+    background-color: #B4F5B4; 
+    width:0%; 
+    height:20px; 
+    border-radius: 3px; 
+}
+
+#percent { 
+    position:absolute; 
+    display:inline-block; 
+    top:3px; 
+    left:48%; 
+}
+
+#adicionar_arquivo {
+    margin-right: 10px;
+}
+
+.sortable { 
+    list-style-type: none; margin: 0; padding: 0; width: 100%; 
+}
+
+.sortable li { 
+    margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; 
+}
+
+html>body .sortable li {
+    height: 1.5em; line-height: 1.2em; 
+}
+
+.ui-state-highlight {
+    height: 1.5em; line-height: 1.2em; 
+}
+#myModal, #modalCadastrarVideoAula {
+    left:45%;
+    width:60%;
+}
+#myModal form, #modalCadastrarVideoAula form {
+    margin: 0 0 0 0;
+}
+#stack2, #stack2-arquivos {
+    height:480px;
+    left:54%;
+}
