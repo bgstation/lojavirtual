@@ -13,6 +13,15 @@ $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 <h1>Banners</h1>
 
 <?php
+if (Yii::app()->user->checkAccess('banner/create')) {
+    $this->widget('bootstrap.widgets.TbButton', array(
+        'type' => 'success',
+        'size' => 'medium',
+        'label' => 'Cadastrar',
+        'url' => Yii::app()->createUrl('banner/create'),
+            )
+    );
+}
 $this->widget('zii.widgets.grid.CGridView', array(
     'id' => 'banner-grid',
     'dataProvider' => $model->search(),

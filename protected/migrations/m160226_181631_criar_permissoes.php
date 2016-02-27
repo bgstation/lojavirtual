@@ -234,13 +234,6 @@ class m160226_181631_criar_permissoes extends CDbMigration {
         ));
 
         $this->insert('rotas', array(
-            'titulo' => 'Atualizar',
-            'controller' => 'produto',
-            'action' => 'create',
-            'categoria' => 'Produto',
-        ));
-
-        $this->insert('rotas', array(
             'titulo' => 'Excluir',
             'controller' => 'produto',
             'action' => 'delete',

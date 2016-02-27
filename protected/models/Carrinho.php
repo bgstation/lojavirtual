@@ -226,8 +226,8 @@ class Carrinho extends CActiveRecord {
     public static function finalizar($pedidoId = null, $pedidoExistente = false) {
         $url = 'https://ws.pagseguro.uol.com.br/v2/checkout';
 
-        $data['email'] = Yii::app()->params['email_pagseguro'];
-        $data['token'] = Yii::app()->params['token_pagseguro'];
+        $data['email'] = Configuracao::model()->naoExcluido()->pagseguroEmail()->find()->valor;
+        $data['token'] = Configuracao::model()->naoExcluido()->pagseguroToken()->find()->valor;
 
         $pedidoId = Pedido::getPedido($pedidoId);
         $oPedido = Pedido::model()->findByPk($pedidoId);

@@ -13,6 +13,15 @@ $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
 <h1>Cupons de Desconto</h1>
 
 <?php
+if (Yii::app()->user->checkAccess('cupomDesconto/create')) {
+    $this->widget('bootstrap.widgets.TbButton', array(
+        'type' => 'success',
+        'size' => 'medium',
+        'label' => 'Cadastrar',
+        'url' => Yii::app()->createUrl('cupomDesconto/create'),
+            )
+    );
+}
 $this->widget('bootstrap.widgets.TbGridView', array(
     'id' => 'cupom-desconto-grid',
     'dataProvider' => $model->search(),

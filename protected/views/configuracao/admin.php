@@ -1,42 +1,36 @@
 <?php
-/* @var $this UsuarioController */
-/* @var $model Usuario */
+/* @var $this ConfiguracaoController */
+/* @var $model Configuracao */
 
 $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
     'homeLink' => '<a href="' . Yii::app()->createUrl('administrador/index') . '">Home</a>',
     'links' => array(
-        'Usuários'
+        'Configurações'
     ),
 ));
 ?>
 
-<h1>Usuários</h1>
+<h1>Configurações</h1>
 
 <?php
 $this->widget('bootstrap.widgets.TbGridView', array(
-    'id' => 'usuario-grid',
+    'id' => 'configuracao-grid',
     'dataProvider' => $model->search(),
     'filter' => $model,
     'columns' => array(
         'id',
-        'nome',
-        'email',
-        array(
-            'name' => 'tipo_usuario_id',
-            'value' => '$data->tipoUsuario->titulo',
-        ),
+        'codigo',
+        'valor',
+        'descricao',
         array(
             'class' => 'bootstrap.widgets.TbButtonColumn',
             'template' => '{view}{update}{delete}',
             'buttons' => array(
                 'view' => array(
-                    'visible' => 'Yii::app()->user->checkAccess("usuario/view")',
+                    'visible' => 'Yii::app()->user->checkAccess("configuracao/view")',
                 ),
                 'update' => array(
-                    'visible' => 'Yii::app()->user->checkAccess("usuario/update")',
-                ),
-                'delete' => array(
-                    'visible' => 'Yii::app()->user->checkAccess("usuario/delete")',
+                    'visible' => 'Yii::app()->user->checkAccess("configuracao/update")',
                 ),
             ),
         ),

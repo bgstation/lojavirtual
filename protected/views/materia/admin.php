@@ -39,13 +39,13 @@ $this->widget('bootstrap.widgets.TbGridView', array(
             'template' => '{view}{update}{delete}',
             'buttons' => array(
                 'view' => array(
-                    'visible' => 'Yii::app()->user->checkAccess("cupomDesconto/view")',
+                    'visible' => 'Yii::app()->user->checkAccess("materia/view")',
                 ),
                 'update' => array(
-                    'visible' => 'Yii::app()->user->checkAccess("cupomDesconto/update")',
+                    'visible' => 'Yii::app()->user->checkAccess("materia/update")',
                 ),
                 'delete' => array(
-                    'visible' => 'Yii::app()->user->checkAccess("cupomDesconto/delete")',
+                    'visible' => 'Yii::app()->user->checkAccess("materia/delete")',
                 ),
             ),
         ),

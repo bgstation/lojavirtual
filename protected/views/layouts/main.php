@@ -61,6 +61,7 @@
                                 ), 'visible' => !Yii::app()->user->isGuest),
                             array('label' => 'Controle', 'items' => array(
                                     array('label' => 'Carrinho', 'url' => array('carrinho/admin'), 'visible' => Yii::app()->user->checkAccess('carrinho/admin')),
+                                    array('label' => 'Configurações', 'url' => array('configuracao/admin'), 'visible' => Yii::app()->user->checkAccess('configuracao/admin')),
                                     array('label' => 'Pedidos', 'url' => array('pedido/admin'), 'visible' => Yii::app()->user->checkAccess('pedido/admin')),
                                 ), 'visible' => !Yii::app()->user->isGuest),
                             array('label' => 'Leads', 'items' => array(
