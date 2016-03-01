@@ -42,6 +42,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                     'visible' => 'Yii::app()->user->checkAccess("produto/view")',
                 ),
                 'update' => array(
+                    'url' => '$this->grid->controller->createUrl("produto/create", array("id" => $data->primaryKey))',
                     'visible' => 'Yii::app()->user->checkAccess("produto/create")',
                 ),
                 'delete' => array(
