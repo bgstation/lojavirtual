@@ -164,7 +164,9 @@
             window.location.href = '<?= Yii::app()->createUrl('site/login', array('finalizar_compra' => true)) ?>';
             return false;
         }
-        if (!'<?= !empty($oUsuario) && $oUsuario->verificarCadastroCompleto() ? true : false ?>') {
+        if ('<?= !$cadastroCompleto ?>') {
+            alert('b');
+            return false;
             window.location.href = '<?= Yii::app()->createUrl('usuario/meusDados', array('finalizar_compra' => true)) ?>';
             return false;
         }

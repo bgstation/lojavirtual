@@ -23,8 +23,6 @@
             </div>
         </div>
 
-        <?= SiteHelper::renderErros($aErros) ?>
-
         <div class="row">
             <div class="col-md-12">
                 <div class="reg_form">

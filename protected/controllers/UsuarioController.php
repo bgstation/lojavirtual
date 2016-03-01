@@ -186,7 +186,13 @@ class UsuarioController extends Controller {
             }
         }
 
-        if (!empty($_GET['finalizar_compra'])) {
+        if (!empty($aErros)) {
+            $errors = '';
+            foreach ($aErros as $key => $error) {
+                $errors .= implode('<br/>', $error);
+            }
+            Yii::app()->user->setFlash('error', $errors);
+        } else if (!empty($_GET['finalizar_compra'])) {
             Yii::app()->user->setFlash('error', 'Você precisa finalizar o seu cadastro para efetuar a compra.');
             Yii::app()->user->setState('finalizar_compra', true);
         }
@@ -194,7 +200,6 @@ class UsuarioController extends Controller {
         $this->render('meus_dados', array(
             'oUsuario' => $oUsuario,
             'oCliente' => $oCliente,
-            'aErros' => $aErros,
         ));
     }
 

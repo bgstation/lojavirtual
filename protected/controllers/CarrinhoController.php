@@ -118,6 +118,7 @@ class CarrinhoController extends Controller {
         $oUsuario = array();
         $oCarrinho = array();
         $oCupomDesconto = array();
+        $cadastroCompleto = false;
         if (!Yii::app()->user->isGuest) {
             $oUsuario = Usuario::model()->findByPk(Yii::app()->user->getId());
             $oCarrinho = Carrinho::model()->naoExcluido()->findAllByAttributes(array(
@@ -127,6 +128,7 @@ class CarrinhoController extends Controller {
                 'join' => 'JOIN pedidos p ON p.id = t.pedido_id',
                 'condition' => 'p.usuario_id = ' . $oUsuario->id,
             ));
+            $cadastroCompleto = $oUsuario->verificarCadastroCompleto() ? true : false;
         }
 
         $finalizarCompra = Yii::app()->user->getState('finalizar_compra');
@@ -136,6 +138,7 @@ class CarrinhoController extends Controller {
             'oCarrinho' => $oCarrinho,
             'oCupomDesconto' => $oCupomDesconto,
             'finalizarCompra' => $finalizarCompra,
+            'cadastroCompleto' => $cadastroCompleto,
         ));
     }
 
